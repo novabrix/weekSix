@@ -1,9 +1,9 @@
-
 /*
 
 The Dataset: Movie Mania
 
-You are managing a database for a **movie rental platform** called **Movie Mania**. The dataset is an array of objects, where each object represents a movie with the following properties:
+You are managing a database for a **movie rental platform** called **Movie Mania**.
+The dataset is an array of objects, where each object represents a movie with the following properties:
 
 - `title` (string): The title of the movie.
 - `genre` (string): The genre of the movie (e.g., "Action", "Comedy", "Drama").
@@ -13,15 +13,20 @@ You are managing a database for a **movie rental platform** called **Movie Mania
 */
 
 const movies = [
-    { title: "Fast & Furious 10", genre: "Action", rating: 7.5, rented: true },
-    { title: "The Notebook", genre: "Drama", rating: 8.0, rented: false },
-    { title: "Spider-Man: No Way Home", genre: "Action", rating: 8.7, rented: true },
-    { title: "Superbad", genre: "Comedy", rating: 7.0, rented: false },
-    { title: "The Dark Knight", genre: "Action", rating: 9.0, rented: true },
-    { title: "The Intern", genre: "Comedy", rating: 7.4, rented: false }
-  ];
-  
-  /*
+  { title: "Fast & Furious 10", genre: "Action", rating: 7.5, rented: true },
+  { title: "The Notebook", genre: "Drama", rating: 8.0, rented: false },
+  {
+    title: "Spider-Man: No Way Home",
+    genre: "Action",
+    rating: 8.7,
+    rented: true,
+  },
+  { title: "Superbad", genre: "Comedy", rating: 7.0, rented: false },
+  { title: "The Dark Knight", genre: "Action", rating: 9.0, rented: true },
+  { title: "The Intern", genre: "Comedy", rating: 7.4, rented: false },
+];
+
+/*
   
   Task 1: Movie Titles and Ratings 🎥 (`.map`)
   
@@ -43,11 +48,15 @@ const movies = [
     "The Intern - Rating: 7.4/10"
   ]
   */
-  
-  // ✍️ Solve it here ✍️
-  
-  
-  /*
+
+// ✍️ Solve it here ✍️
+
+const movieList = movies.map(
+  ({ title, rating }) => `${title} - Rating: ${rating}/10`
+);
+console.log(movieList);
+
+/*
   Task 2: Find Highly Rated Movies 🌟 (`.filter`)
   
   Your customers have requested a list of **highly rated movies** 
@@ -64,8 +73,8 @@ const movies = [
     { title: "The Dark Knight", genre: "Action", rating: 9.0, rented: true }
   ]
   */
-  
-  // ✍️ Solve it here ✍️
 
+// ✍️ Solve it here ✍️
 
- 
+const topMovies = movies.filter(({ rating }) => rating >= 8.0);
+console.log(topMovies)
